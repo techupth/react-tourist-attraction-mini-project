@@ -1,0 +1,88 @@
+.trip-card {
+  padding: 20px;
+  text-align: left;
+  font-family: "Sarabun", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.trip-card .photos {
+  position: relative;
+  width: 25%;
+  float: left;
+  margin-right: 20px;
+}
+
+.trip-card .photos img {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.trip-card .small-photos {
+  display: flex;
+  margin-top: 10px;
+}
+
+.trip-card .small-photos img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.trip-card h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.trip-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+.trip-card a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+.trip-card a.read-more {
+  color: rgba(0, 153, 255, 0.982);
+  text-decoration: underline;
+}
+
+.trip-card .tags {
+  margin-top: 10px;
+}
+
+.trip-card .tags span {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.trip-card .trip-card-actions {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.trip-card button {
+  display: inline-block;
+  margin-top: -45px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.trip-card button:hover {
+  background-color: #0056b3;
+}

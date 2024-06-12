@@ -1,0 +1,14 @@
+.home-page {
+  padding: 20px;
+  font-family: "Sarabun", sans-serif;
+}
+
+.home-page h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sarabun", sans-serif;
+  color: rgba(0, 153, 255, 0.982);
+}
