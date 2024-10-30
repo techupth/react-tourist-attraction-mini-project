@@ -1,0 +1,39 @@
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  width: 60%;
+  text-align: left;
+}
+
+.input-container {
+  position: relative;
+  width: 60%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+.input-container::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #36383a;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}

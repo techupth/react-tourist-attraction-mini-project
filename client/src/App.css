@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+/* .App,
+.App * {
+  font-family: "Kanit", sans-serif;
+} */
+
+body,
+input {
+  font-family: "Kanit", sans-serif;
+}
