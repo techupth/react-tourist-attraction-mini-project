@@ -5,14 +5,14 @@ import SearchBar from "./SearchBar";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const searchQueryRef = useRef();
   const debounceTimerRef = useRef(null);
 
   useEffect(() => {
-    // Clear timer before component unmount
     getPosts();
 
+    // Clear timer before component unmount
     return () => {
       if (debounceTimerRef.current) {
         clearTimeout(debounceTimerRef.current);
@@ -32,9 +32,8 @@ function Home() {
     }
   };
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setSearchQuery(value);
+  const handleInputChange = (event) => {
+    const value = event.target.value;
 
     // Clear timer
     if (debounceTimerRef.current) {
@@ -44,18 +43,30 @@ function Home() {
     // Create new timer
     debounceTimerRef.current = setTimeout(() => {
       // Call after 500ms
-      getPosts(searchQuery);
+      getPosts(value);
     }, 500);
+  };
+
+  const handleClickTag = (tag) => {
+    const value = searchQueryRef.current.value;
+    if (searchQueryRef.current.value.includes(tag)) return;
+
+    if (value) {
+      searchQueryRef.current.value += ` ${tag}`;
+    } else {
+      searchQueryRef.current.value = tag;
+    }
+    getPosts(searchQueryRef.current.value);
   };
 
   return (
     <main className="flex flex-col items-center gap-8 p-8">
       <h1 className="text-5xl text-blue-500">เที่ยวไหนดี</h1>
-      <SearchBar value={searchQuery} onChange={handleInputChange} />
+      <SearchBar ref={searchQueryRef} onChange={handleInputChange} />
       {isLoading ? (
         <span className="text-2xl">Loading...</span>
       ) : (
-        <PostList posts={posts} />
+        <PostList posts={posts} handleClickTag={handleClickTag} />
       )}
     </main>
   );

@@ -28,18 +28,33 @@ function PostCard(props) {
         >
           อ่านต่อ
         </a>
-        <div className="flex gap-2 text-sm">
+        <div className="flex gap-2 text-sm text-gray-400">
           <span>หมวด:</span>
           {props.post.tags.map((tag, index) => {
             if (index === props.post.tags.length - 1) {
               return (
                 <Fragment key={tag}>
                   <span>และ</span>
-                  <span>{tag}</span>
+                  <button
+                    onClick={() => {
+                      props.handleClickTag(tag);
+                    }}
+                    className="underline cursor-pointer"
+                  >
+                    {tag}
+                  </button>
                 </Fragment>
               );
             }
-            return <span key={tag}>{tag}</span>;
+            return (
+              <button
+                key={tag}
+                onClick={() => props.handleClickTag(tag)}
+                className="underline cursor-pointer"
+              >
+                {tag}
+              </button>
+            );
           })}
         </div>
         <div className="flex flex-1 justify-between items-end mt-1 overflow-hidden">
