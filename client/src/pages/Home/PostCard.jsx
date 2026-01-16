@@ -67,9 +67,12 @@ function PostCard(props) {
               />
             ))}
           </div>
-          <div className="p-1 border-2 border-blue-400 rounded-full">
+          <button
+            onClick={() => navigator.clipboard.writeText(props.post.url)}
+            className="p-1 border-2 border-blue-400 rounded-full cursor-pointer"
+          >
             <Link className="text-blue-400" />
-          </div>
+          </button>
         </div>
       </div>
     </div>
