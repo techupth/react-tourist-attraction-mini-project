@@ -65,6 +65,10 @@ function Home() {
       <SearchBar ref={searchQueryRef} onChange={handleInputChange} />
       {isLoading ? (
         <span className="text-2xl">Loading...</span>
+      ) : !posts.length ? (
+        <span className="text-2xl">
+          ไม่มีผลลัพท์สำหรับ "{searchQueryRef.current?.value ?? ""}"
+        </span>
       ) : (
         <PostList posts={posts} handleClickTag={handleClickTag} />
       )}
