@@ -15,7 +15,9 @@ function PostCard(props) {
           rel="noopener noreferrer"
           className="w-fit"
         >
-          <h2 className="text-2xl line-clamp-1">{props.post.title}</h2>
+          <h2 className="text-2xl line-clamp-1 hover:underline">
+            {props.post.title}
+          </h2>
         </a>
         <p className="truncate text-sm text-gray-400">
           {props.post.description}
@@ -24,7 +26,7 @@ function PostCard(props) {
           href={props.post.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-fit text-sm text-blue-500 underline"
+          className="w-fit text-sm text-blue-500 underline hover:text-blue-600"
         >
           อ่านต่อ
         </a>
@@ -39,7 +41,7 @@ function PostCard(props) {
                     onClick={() => {
                       props.handleClickTag(tag);
                     }}
-                    className="underline cursor-pointer"
+                    className="underline cursor-pointer hover:text-gray-500"
                   >
                     {tag}
                   </button>
@@ -50,7 +52,7 @@ function PostCard(props) {
               <button
                 key={tag}
                 onClick={() => props.handleClickTag(tag)}
-                className="underline cursor-pointer"
+                className="underline cursor-pointer hover:text-gray-500"
               >
                 {tag}
               </button>
@@ -69,9 +71,9 @@ function PostCard(props) {
           </div>
           <button
             onClick={() => navigator.clipboard.writeText(props.post.url)}
-            className="p-1 border-2 border-blue-400 rounded-full cursor-pointer"
+            className="p-1 text-blue-400 border-2 border-blue-400 rounded-full cursor-pointer hover:text-blue-500 hover:border-blue-500"
           >
-            <Link className="text-blue-400" />
+            <Link />
           </button>
         </div>
       </div>
