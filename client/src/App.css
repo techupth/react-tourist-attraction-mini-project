@@ -1,0 +1,215 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+
+.App {
+  font-family: 'Kanit', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.main-title {
+  color: #2c9cdb;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.search-input {
+  width: 70%;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+}
+
+.trip-card {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.main-img {
+  width: 350px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.trip-detail {
+  flex: 1;
+}
+
+.trip-title {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.description {
+  color: #828282;
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.read-more {
+  color: #2c9cdb;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.tags-container {
+  font-size: 14px;
+  color: #828282;
+  margin-top: 10px;
+}
+
+.tag-button {
+  background: none;
+  border: none;
+  color: #828282;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.sub-images {
+  display: flex;
+  gap: 15px;
+  margin-top: 11px;
+}
+
+.sub-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 15px;
+} */
+
+
+/* นำเข้าฟอนต์ */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+
+/* ภาพรวมของหน้าเว็บ */
+.App {
+  font-family: 'Kanit', sans-serif;
+  max-width: 1000px;    /* จำกัดความกว้างหน้าจอไม่ให้กว้างเกินไป */
+  margin: 0 auto;       /* จัดกึ่งกลางหน้าจอ */
+  padding: 40px 20px;   /* เพิ่มระยะห่างขอบใน (บน-ล่าง 40px, ซ้าย-ขวา 20px) */
+}
+
+/* หัวข้อหลัก "เที่ยวไหนดี" */
+.main-title {
+  color: #2c9cdb;      
+  text-align: center;   /* จัดตัวหนังสือไว้ตรงกลาง */
+  font-size: 48px;
+  font-weight: 400;     /* ความหนาปกติของฟอนต์ */
+  margin-bottom: 20px;  /* เว้นระยะห่างจากช่องค้นหาด้านล่าง */
+}
+
+/* ส่วนครอบช่องค้นหา */
+.search-container {
+  display: flex;
+  flex-direction: column; /* จัดองค์ประกอบในกล่องให้เรียงต่อกันเป็นแนวตั้ง */
+  margin-bottom: 60px;    /* เว้นระยะห่างระหว่างช่องค้นหากับรายการทริป */
+}
+
+/* ช่องพิมพ์ค้นหา */
+.search-input {
+  width: 70%;           /* กำหนดความยาวช่อง */
+  margin: 0 auto;       /* จัดช่อง Input ไว้กึ่งกลาง */
+  border: none;         /* เอาเส้นขอบออก */
+  border-bottom: 1px solid #ddd; /* ใส่เส้นใต้แทนเส้นขอบ */
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;   /* ให้ตัวหนังสือที่พิมพ์อยู่ตรงกลาง */
+  outline: none;        /* เอาเส้นขอบไฮไลท์เวลาคลิกออก */
+}
+
+/* การ์ดแต่ละทริป (ใช้ Flexbox แบ่งซ้าย-ขวา) */
+.trip-card {
+  display: flex;        /* สั่งให้รูปใหญ่กับเนื้อหามาวางข้างกัน */
+  gap: 30px;            /* เว้นระยะห่างระหว่างรูปใหญ่กับข้อความ */
+  margin-bottom: 60px;  /* ระยะห่างระหว่างแต่ละทริป */
+  position: relative;
+}
+
+/* รูปภาพหลักด้านซ้าย */
+.main-img {
+  width: 350px;         /* กำหนดขนาดตายตัวเพื่อให้ทุกรูปเท่ากัน */
+  height: 225px;
+  object-fit: cover;    /* บังคับรูปให้เต็มกรอบโดยที่สัดส่วนไม่เพี้ยน */
+  border-radius: 25px;  /* ทำมุมโค้งมนตามแบบ */
+}
+
+/* ส่วนข้อความและรายละเอียดด้านขวา */
+.trip-detail {
+  flex: 1;              /* ให้พื้นที่ส่วนข้อความขยายกว้างจนสุดพื้นที่ที่เหลือ */
+}
+
+/* หัวข้อทริป */
+.trip-title {
+  font-size: 20px;
+  margin-bottom: 8px;    /* เว้นระยะล่าง 8px */
+  color: #000;        
+}
+
+/* เนื้อหารายละเอียดทริป */
+.description {
+  color: #828282;       /* สีเทาเพื่อให้ดูเป็นรองหัวข้อ */
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.5;     /* ระยะห่างระหว่างบรรทัดให้อ่านง่าย */
+}
+
+/* ลิงก์ 'อ่านต่อ' */
+.read-more {
+  color: #2c9cdb;
+  font-size: 14px;
+  text-decoration: underline; /* ขีดเส้นใต้ลิงก์ */
+}
+
+/* ส่วนแสดงหมวดหมู่ */
+.tags-container {
+  font-size: 14px;
+  color: #828282;
+  margin-top: 10px;
+}
+
+/* ปุ่มหมวดหมู่ (Tag) */
+.tag-button {
+  background: none;     /* เอาพื้นหลังปุ่มออก */
+  border: none;         /* เอาเส้นขอบปุ่มออก */
+  color: #828282;
+  text-decoration: underline; /* ขีดเส้นใต้เพื่อให้ดูรู้ว่าเป็นปุ่มที่กดได้ */
+  cursor: pointer;      /* เปลี่ยนรูปเมาส์เป็นรูปมือเวลาชี้ */
+  padding: 0;
+  font-family: inherit; /* ใช้ฟอนต์ Kanit ตามตัวแม่ */
+}
+
+/* ส่วนจัดวางรูปย่อยด้านล่างข้อความ */
+.sub-images {
+  display: flex;        /* จัดรูปย่อยเรียงต่อกันในแนวนอน */
+  gap: 15px;            /* ระยะห่างระหว่างรูปย่อย */
+  margin-top: 11px;     /* ระยะห่างจากส่วน Tag */
+}
+
+/* รูปภาพย่อย */
+.sub-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 15px;
+}
